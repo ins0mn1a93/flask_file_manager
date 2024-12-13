@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Reader</title>
+</head>
+<body>
+    <h2>File Reader</h2>
+    {% if session.logged_in %}
+        {% if session.username %}
+            <p>Welcome, {{ session.username }}!</p>
+        {% else %}
+            <p>Welcome, Unknown!</p>
+        {% endif %}
+
+        <!-- 添加一个按钮用于跳转到文件上传页面 -->
+        <button onclick="fileUploader()">File uploader</button>
+        <!-- 添加一个按钮用于跳转到获取用户权限页面 -->
+        <button onclick="getUserPermissionsPage()">Get User Permissions</button>
+        <!-- 添加一个按钮用于跳转到更新权限页面 -->
+        <button onclick="updatePermissions()">Update Permissions</button>
+
+        <form action="/file_reader" method="post">
+            <input type="text" name="file_path" placeholder="Enter file path" required><br>
+            <input type="submit" value="Read File">
+        </form>
+        {% if file_content %}
+            <pre>{{ file_content }}</pre>
+        {% endif %}
+
+        <a href="/logout">Logout</a>
+    {% else %}
+        <p>Please login to access the file reader.</p>
+        <a href="/login">Login</a>
+    {% endif %}
+
+    <script>
+        function fileUploader() {
+            window.location.href = "/file_uploader";
+        }
+        function updatePermissions() {
+            window.location.href = "/update_permissions";
+        }
+        function getUserPermissionsPage() {
+            window.location.href = "/get_user_permissions";
+        }
+    </script>
+</body>
+</html>

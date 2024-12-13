@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get User Permissions</title>
+</head>
+
+<body>
+    <h2>Get User Permissions</h2>
+    <button onclick="goToFileReader()">Back to File Reader</button>
+    <form id="userPermissionsForm">
+        <label for="user">Select User:</label>
+        <select id="user" name="user">
+            {% for user in users %}
+            {% if user == current_user %}
+            <option value="{{ user }}" selected>{{ user }}</option>
+            {% else %}
+            <option value="{{ user }}">{{ user }}</option>
+            {% endif %}
+            {% endfor %}
+        </select><br><br>
+        <input type="button" value="Get Permissions" onclick="getUserPermissions()">
+    </form>
+
+
+    <h3>User Permissions:</h3>
+    <div id="userPermissions"></div>
+
+    <script>
+        function getUserPermissions() {
+            var selectedUser = document.getElementById("user").value;
+            fetch('/get_user_permissions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'user=' + selectedUser
+            })
+                .then(response => response.json())
+                .then(data => {
+                    var permissions = '';
+                    for (var path in data) {
+                        permissions += '<p>' + path + ': ' + data[path] + '</p>';
+                    }
+                    document.getElementById('userPermissions').innerHTML = permissions;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function goToFileReader() {
+            window.location.href = "/file_reader";
+        }
+
+    </script>
+
+</body>
+
+</html>

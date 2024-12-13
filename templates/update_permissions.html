@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Permissions</title>
+</head>
+<body>
+    <h2>Update Permissions</h2>
+    <button onclick="goToFileReader()">Back to File Reader</button>
+    <form id="permissionsForm" method="post">
+        <label for="user">User:</label>
+        <select id="user" name="user">
+            {% for user in users %}
+                <option value="{{ user }}">{{ user }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="path">Path:</label>
+        <input type="text" id="path" name="path" required><br><br>
+        <label for="access">Access:</label>
+        <select id="access" name="access">
+            <option value="read">Read</option>
+            <option value="write">Write</option>
+            <option value="read_write">Read & Write</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function goToFileReader() {
+            window.location.href = "/file_reader";
+        }
+
+    </script>
+</body>
+</html>

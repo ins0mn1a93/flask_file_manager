@@ -1,0 +1,81 @@
+{
+    "admin": {
+        "is_admin": true,
+        "password": "Y0U_SHOViD_NOT_US3_TH!S",
+        "permissions": {
+            "/home/admin/": "read_write",
+            "/upload/": "read_write",
+            "/app/": "read",
+            "/homework/": "write",
+            "/documents/": "read_write",
+            "/images/": "read_write",
+            "/public/": "read",
+            "/config/": "read_write",
+            "/backup/": "read_write",
+            "/logs/": "read",
+            "/scripts/": "read",
+            "/tmp/": "read_write",
+            "/bin/": "read",
+            "/var/www/": "read_write",
+            "/downloads/": "read_write",
+            "/media/": "read",
+            "/templates/": "read_write",
+            "/database/": "read_write",
+            "/usr/local/": "read",
+            "/workspace/": "read_write",
+            "/archives/": "read"
+        }
+    },
+    "ctfer": {
+        "is_admin": false,
+        "password": "manager_2024>_<",
+        "permissions": {
+            "/home/ctfer/": "read_write",
+            "/upload/": "read_write",
+            "/homework/": "write",
+            "/documents/": "read_write",
+            "/images/": "read_write",
+            "/public/": "read",
+            "/config/": "read_write",
+            "/backup/": "read_write",
+            "/logs/": "read",
+            "/scripts/": "read",
+            "/tmp/": "read_write",
+            "/bin/": "read",
+            "/var/www/": "read_write",
+            "/downloads/": "read_write",
+            "/media/": "read",
+            "/templates/": "read_write",
+            "/database/": "read_write",
+            "/usr/local/": "read",
+            "/workspace/": "read_write",
+            "/archives/": "read"
+        }
+    },
+    "j0k3r": {
+        "is_admin": false,
+        "password": "Ha_Ha_:)",
+        "permissions": {
+            "/home/j0k3r/": "read_write",
+            "/upload/": "read",
+            "/documents/": "read_write",
+            "/images/": "read",
+            "/public/": "read",
+            "/config/": "read_write",
+            "/backup/": "read_write",
+            "/logs/": "read",
+            "/scripts/": "read_write",
+            "/tmp/": "read_write",
+            "/github/": "read_write",
+            "/bin/": "read",
+            "/var/www/": "read_write",
+            "/downloads/": "read",
+            "/media/": "read_write",
+            "/templates/": "read_write",
+            "/database/": "read_write",
+            "/usr/local/": "read",
+            "/workspace/": "read_write",
+            "/archives/": "read"
+        }
+    }
+}
